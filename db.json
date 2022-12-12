@@ -11,6 +11,18 @@
       "email": "sidhu@seller.com",
       "password": "sidhu@123",
       "id": 2
+    },
+    {
+      "name": "",
+      "password": "",
+      "email": "",
+      "id": 3
+    },
+    {
+      "name": "rudhra",
+      "password": "abc@123",
+      "email": "rudhra@abc.com",
+      "id": 4
     }
   ]
 }

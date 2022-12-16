@@ -13,9 +13,9 @@
       "id": 2
     },
     {
-      "name": "",
-      "password": "",
-      "email": "",
+      "name": "ani",
+      "password": "ani@123",
+      "email": "ani@seller.com",
       "id": 3
     },
     {
@@ -25,7 +25,7 @@
       "id": 4
     },
     {
-      "name": "",
+      "name": "vinay",
       "email": "vinay@user.com",
       "password": "vinay@123",
       "id": 5

@@ -14,15 +14,15 @@ export class SellerService {
     return this.http.post('http://localhost:3000/seller', 
     data,{observe:'response'}).subscribe((result)=>{
       if(result){
-        localStorage.setItem('seller',JSON.stringify(result));
-        this.router.navigate(['seller-home']);
+        localStorage.setItem('seller',JSON.stringify(result.body));
+        this.router.navigate(['seller-home'])
       }
     });
   }
   reloadSeller(){
     if(localStorage.getItem('seller')){
-      this.isSellerLoggedIn.next(true);
-      this.router.navigate(['seller-home']);
+      this.isSellerLoggedIn.next(true)
+      this.router.navigate(['seller-home'])
     }
   }
   userLogin(data: login){
@@ -30,7 +30,7 @@ export class SellerService {
     {observe:'response'}).subscribe((result:any)=>{
       if(result && result.body && result.body.length===1){
         this.isLoginError.emit(false);
-        localStorage.setItem('seller',JSON.stringify(result));
+        localStorage.setItem('seller',JSON.stringify(result.body));
         this.router.navigate(['seller-home']);
       } else {
         this.isLoginError.emit(true);

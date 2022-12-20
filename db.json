@@ -30,5 +30,25 @@
       "password": "vinay@123",
       "id": 5
     }
+  ],
+  "products": [
+    {
+      "name": "apple 14",
+      "price": "120000",
+      "category": "mobile",
+      "color": "grey",
+      "description": "good apple product",
+      "image": "https://www.apple.com/in/iphone-14/images/overview/hero/hero_iphone_14_plus__fra3gmuj0aum_medium.jpg",
+      "id": 1
+    },
+    {
+      "name": "petter pen",
+      "price": "20000",
+      "category": "pen",
+      "color": "black",
+      "description": "good product",
+      "image": "https://s7d9.scene7.com/is/image/NewellRubbermaid/1931644_rbn_imgps_10?wid=180&hei=180",
+      "id": 2
+    }
   ]
 }

@@ -15,10 +15,7 @@ export class SellerUpdateProductComponent implements OnInit {
 
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('id');
-    console.warn(productId);
-    productId &&
-      this.product.getProduct(productId).subscribe((data) => {
-        console.warn(data);
+    productId && this.product.getProduct(productId).subscribe((data) => {
         this.productData = data;
       });
   }
@@ -34,6 +31,5 @@ export class SellerUpdateProductComponent implements OnInit {
     setTimeout(() => {
       this.productMessage = undefined;
     }, 3000);
-    console.warn(data);
   }
 }

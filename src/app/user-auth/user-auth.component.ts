@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { signUp } from '../data-type';
-import { SellerService } from '../services/seller.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-auth',
@@ -8,13 +8,13 @@ import { SellerService } from '../services/seller.service';
   styleUrls: ['./user-auth.component.css']
 })
 export class UserAuthComponent implements OnInit {
-  constructor(private seller: SellerService){
+  constructor(private user: UserService){
 
   }
   ngOnInit(): void {
-    this.seller.reloadSeller()
+    this.user.userAuthReload();
   }
-  signUp(data: signUp): void {
-    this.seller.userSignUp(data);
+  signUp(data: signUp) {
+    this.user.userSignUp(data);
   }
 }

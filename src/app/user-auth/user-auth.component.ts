@@ -21,9 +21,8 @@ export class UserAuthComponent implements OnInit {
     this.user.userSignUp(data);
   }
   login(data: login) {
-    this.user.userLogin(data)
+    this.user.userLogin(data);
     this.user.invalidUserAuth.subscribe((result) => {
-      console.warn(result);
       if (result) {
         this.authError = "User not found"
       } else {

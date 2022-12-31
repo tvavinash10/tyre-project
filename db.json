@@ -42,10 +42,13 @@
       "id": 2
     }
   ],
-  "users":[
-
+  "users": [
+    {
+      "name": "rudhra",
+      "email": "rudhra@seller.com",
+      "password": "abc123",
+      "id": 1
+    }
   ],
-  "cart":[
-    
-  ]
+  "cart": []
 }

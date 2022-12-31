@@ -53,12 +53,8 @@ export class CartPageComponent implements OnInit {
 
     })
   }
-
-
-
-
-  // checkout() {
-  //   this.router.navigate(['/checkout'])
-  // }
+  checkout() {
+    this.router.navigate(['/checkout'])
+  }
 
 }

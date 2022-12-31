@@ -74,8 +74,9 @@ export class ProductDetailsComponent implements OnInit {
         delete cartData.id;
         this.product.addToCart(cartData).subscribe((result) => {
           if (result) {
-            this.product.getCartList(userId);
-            this.removeCart = true
+            alert("Product is added in the cart");
+            // this.product.getCartList(userId);
+            // this.removeCart = true
           }
         })
       }

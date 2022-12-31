@@ -42,32 +42,32 @@ export class UserAuthComponent implements OnInit {
     let data = localStorage.getItem('localCart');
     let user = localStorage.getItem('user');
     let userId = user && JSON.parse(user).id;
-    //  if(data){
-    //   let cartDataList:product[]= JSON.parse(data);
+     if(data){
+      let cartDataList:product[]= JSON.parse(data);
 
-    //   cartDataList.forEach((product:product, index)=>{
-    //     let cartData:cart={
-    //       ...product,
-    //       productId:product.id,
-    //       userId
-    //     }
-    //     delete cartData.id;
-    //     setTimeout(() => {
-    //       this.product.addToCart(cartData).subscribe((result)=>{
-    //         if(result){
-    //           console.warn("data is stored in DB");
-    //         }
-    //       })
-    //     }, 500);
-    //     if(cartDataList.length===index+1){
-    //       localStorage.removeItem('localCart')
-    //     }
-    //   })
-    //  }
+      cartDataList.forEach((product:product, index)=>{
+        let cartData:cart={
+          ...product,
+          productId:product.id,
+          userId
+        }
+        delete cartData.id;
+        setTimeout(() => {
+          this.product.addToCart(cartData).subscribe((result)=>{
+            if(result){
+              console.warn("data is stored in DB");
+            }
+          })
+        }, 500);
+        if(cartDataList.length===index+1){
+          localStorage.removeItem('localCart')
+        }
+      })
+     }
 
-    //  setTimeout(() => {
-    //   this.product.getCartList(userId)
-    //  }, 2000);
+     setTimeout(() => {
+      this.product.getCartList(userId)
+     }, 2000);
 
   }
 }

@@ -59,4 +59,16 @@ export class ProductService {
         }
       });
   }
+  removeItemFromCart(productId: number) {
+    let cartData = localStorage.getItem('localCart');
+    if (cartData) {
+      let items: product[] = JSON.parse(cartData);
+      items = items.filter((item: product) => productId !== item.id);
+      localStorage.setItem('localCart', JSON.stringify(items));
+      this.cartData.emit(items);
+    }
+  }
+  removeToCart(cartId: number) {
+    return this.http.delete('http://localhost:3000/cart/' + cartId);
+  }
 }

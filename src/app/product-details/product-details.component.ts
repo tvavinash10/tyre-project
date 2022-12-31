@@ -17,7 +17,6 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     let productId = this.activeRoute.snapshot.paramMap.get('productId');
-    console.warn(productId);
     productId && this.product.getProduct(productId).subscribe((result) => {
       this.productData = result;
       let cartData = localStorage.getItem('localCart');
@@ -82,21 +81,19 @@ export class ProductDetailsComponent implements OnInit {
       }
     }
   }
-  // removeToCart(productId: number) {
-  //   if (!localStorage.getItem('user')) {
-  //     this.product.removeItemFromCart(productId)
-  //   } else {
-  //     console.warn("cartData", this.cartData);
-
-  //     this.cartData && this.product.removeToCart(this.cartData.id)
-  //       .subscribe((result) => {
-  //         let user = localStorage.getItem('user');
-  //         let userId = user && JSON.parse(user).id;
-  //         this.product.getCartList(userId)
-  //       })
-  //   }
-  //   this.removeCart = false
-  // }
+  removeToCart(productId: number) {
+    if (!localStorage.getItem('user')) {
+      this.product.removeItemFromCart(productId)
+    } else {
+      this.cartData && this.product.removeToCart(this.cartData.id)
+        .subscribe((result) => {
+          let user = localStorage.getItem('user');
+          let userId = user && JSON.parse(user).id;
+          this.product.getCartList(userId)
+        })
+    }
+    this.removeCart = false
+  }
 
 
 }

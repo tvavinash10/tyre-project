@@ -41,18 +41,17 @@ export class CheckoutComponent implements OnInit {
 
       this.cartData?.forEach((item) => {
         setTimeout(() => {
-          // item.id && this.product.deleteCartItems(item.id);
+          item.id && this.product.deleteCartItems(item.id);
         }, 700)
       })
 
       this.product.orderNow(orderData).subscribe((result) => {
         if (result) {
-          alert('Order has been placed')
-          // this.orderMsg = "Order has been placed";
-        //   setTimeout(() => {
-        //     this.orderMsg = undefined;
-        //     this.router.navigate(['/my-orders'])
-        //   }, 4000);
+          this.orderMsg = "Order has been placed";
+          setTimeout(() => {
+            this.orderMsg = undefined;
+            this.router.navigate(['/my-orders'])
+          }, 4000);
 
         }
 

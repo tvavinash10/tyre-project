@@ -17,7 +17,6 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.product.currentCart().subscribe((result) => {
-
       let price = 0;
       this.cartData = result;
       result.forEach((item) => {
@@ -26,9 +25,6 @@ export class CheckoutComponent implements OnInit {
         }
       })
       this.totalPrice = price + (price / 10) + 100 - (price / 10);
-
-      console.warn(this.totalPrice);
-
     })
 
   }
@@ -49,17 +45,18 @@ export class CheckoutComponent implements OnInit {
         }, 700)
       })
 
-      // this.product.orderNow(orderData).subscribe((result) => {
-      //   if (result) {
-      //     this.orderMsg = "Order has been placed";
-      //     setTimeout(() => {
-      //       this.orderMsg = undefined;
-      //       this.router.navigate(['/my-orders'])
-      //     }, 4000);
+      this.product.orderNow(orderData).subscribe((result) => {
+        if (result) {
+          alert('Order has been placed')
+          // this.orderMsg = "Order has been placed";
+        //   setTimeout(() => {
+        //     this.orderMsg = undefined;
+        //     this.router.navigate(['/my-orders'])
+        //   }, 4000);
 
-      //   }
+        }
 
-      // })
+      })
     }
 
   }

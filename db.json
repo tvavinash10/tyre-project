@@ -50,5 +50,36 @@
       "id": 1
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "name": "petter pen",
+      "price": "20000",
+      "category": "pen",
+      "color": "blue",
+      "description": "good product",
+      "image": "https://s7d9.scene7.com/is/image/NewellRubbermaid/1931644_rbn_imgps_10?wid=180&hei=180",
+      "quantity": 4,
+      "productId": 2,
+      "userId": 1,
+      "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "email": "avinash@gmail.com",
+      "address": "bangalore",
+      "contact": "9986619191",
+      "totalPrice": 80100,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "email": "avinash@gmail.com",
+      "address": "bangalore",
+      "contact": "9986619191",
+      "totalPrice": 80100,
+      "userId": 1,
+      "id": 2
+    }
+  ]
 }
